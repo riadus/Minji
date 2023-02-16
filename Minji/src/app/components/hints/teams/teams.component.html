@@ -1,0 +1,15 @@
+
+<div class="flex">
+    <table class="border-separate border-spacing-4">
+    <tbody>
+        <ng-container *ngFor="let team of teams">
+            <tr class="text-primary-100" >
+                <td><img [src]="team.teamHint.imgPath" class="h-7 w-7"><img> </td>
+                <td @appear><div>{{ team.teamHint.name }}</div></td>
+                <td @appear><div >{{ team.transferHint.type }}</div></td>
+                <td @appear><div >{{ team.transferHint.amount }} {{ team.transferHint.currency }}</div></td>
+            </tr>
+        </ng-container>
+    </tbody>
+    </table>
+</div>

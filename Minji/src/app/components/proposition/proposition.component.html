@@ -1,0 +1,21 @@
+<div class="flex items-center h-full">
+    <div class="flex items-center border-b-2 border-primary-500 py-2 ml-11 w-full">
+        <input class="justify-center appearance-none bg-transparent border-4 border-secondary-500 outline-none w-full text-4xl text-secondary-500 mr-3 py-1 px-2 leading-tight focus:outline-none focus:border-none" 
+            type="text" 
+            (keyup.enter)="suggest()"
+            [(ngModel)]="suggestion"
+            placeholder="Your guess, challenger!">
+    </div>
+    <div class="mx-11">
+        <app-next-hint></app-next-hint>
+    </div>
+</div>
+<div class="grid grid-rows-6 grid-cols-10 grid-flow-col gap-4">
+    <ng-container *ngFor="let player of players">
+        <div class="text-primary-100">
+            {{ player }}
+        </div>
+
+    </ng-container>
+    
+</div>

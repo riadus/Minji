@@ -1,0 +1,11 @@
+<div class="h-full p-4 flex">
+    <div class="overflow-y h-full flex-1 pb-16">
+        <app-nationality *ngIf="showNationality" @appear></app-nationality>
+        <app-teams *ngIf="showTeams" @appear></app-teams>
+        <app-birth-details *ngIf="showBirthDetails" @appear></app-birth-details>
+        <app-physical-details *ngIf="showPhysicalDetails" @appear></app-physical-details>
+        <app-position *ngIf="showPosition" @appear></app-position>
+        <app-picture *ngIf="showImage" @appear></app-picture>
+        <app-answer *ngIf="showName" @appear></app-answer>
+    </div>
+</div>
