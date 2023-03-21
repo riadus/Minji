@@ -26,7 +26,6 @@ import * as GameSelectors from "../../../store/selectors/game.selectors"
     ]
 })
 export class TeamsComponent implements OnInit, OnDestroy {
-
   public teams: Team[] = [];
   
   private unsubscribe = new Subject();
@@ -46,5 +45,15 @@ export class TeamsComponent implements OnInit, OnDestroy {
     this.unsubscribe.complete();
   }
 
+  public getTransferType(team: Team) : string {
+    if(team.transferHint?.type == 1){
+      return 'Bought';
+    }
+    if(team.transferHint?.type == 2){
+      return 'Loan';
+    }
+    return '';
+  }
+  
 }
 

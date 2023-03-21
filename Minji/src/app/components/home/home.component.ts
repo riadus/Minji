@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { nextHint } from 'src/app/store/actions/game.actions';
+import { newGame, nextHint } from 'src/app/store/actions/game.actions';
 
 @Component({
   selector: 'app-home',
@@ -16,6 +16,6 @@ export class HomeComponent {
 
   public startNewGame(): void {
     this.router.navigateByUrl('/quiz');
-    this.store.dispatch(nextHint());
+    this.store.dispatch(newGame());
   }
 }

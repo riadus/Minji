@@ -13,6 +13,16 @@ export class GameEffects {
         private gameService: GameService
     ) { }
 
+    newGame$ = createEffect(() => {
+        return this.actions$.pipe(
+            ofType(GameActions.newGame),
+            mergeMap(_ => this.gameService.newGame().pipe(
+                map(gameId => GameActions.newGameSuccess({ id: gameId })),
+                catchError(error => of(GameActions.newGameFailure({ error })))
+            ))
+        )}
+    );
+
     nextHint$ = createEffect(() => {
         return this.actions$.pipe(
             ofType(GameActions.nextHint),

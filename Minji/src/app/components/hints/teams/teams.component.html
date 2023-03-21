@@ -5,9 +5,9 @@
         <ng-container *ngFor="let team of teams">
             <tr class="text-primary-100" >
                 <td><img [src]="team.teamHint.imgPath" class="h-7 w-7"><img> </td>
-                <td @appear><div>{{ team.teamHint.name }}</div></td>
-                <td @appear><div >{{ team.transferHint.type }}</div></td>
-                <td @appear><div >{{ team.transferHint.amount }} {{ team.transferHint.currency }}</div></td>
+                <td @appear *ngIf="team.teamHint != null"><div>{{ team.teamHint.name }}</div></td>
+                <td @appear *ngIf="team.teamHint != null"><div>{{ getTransferType(team) }}</div></td>
+                <td @appear *ngIf="team.teamHint != null"><div>{{ team.transferHint.amount }} {{ team.transferHint.currency }}</div></td>
             </tr>
         </ng-container>
     </tbody>

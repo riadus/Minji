@@ -11,7 +11,7 @@ export interface TeamDetails {
 export interface Transfer {
     currency: string;
     amount: string;
-    type: string;
+    type: TransferType;
 }
 
 export interface Team {
@@ -59,4 +59,9 @@ export interface UserInterfaceState {
     lastHint: boolean;
     gameEnded: boolean;
     gameRestarted: boolean;
+}
+
+export enum TransferType {
+    loan = 1,
+    bought = 2
 }

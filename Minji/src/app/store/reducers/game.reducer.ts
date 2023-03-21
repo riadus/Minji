@@ -48,10 +48,12 @@ export const gameReducer = createReducer(initialGameState,
                 physicalDetails: props.playerToGuess.physicalDetails ?? state.playerToGuess.physicalDetails,
                 position: props.playerToGuess.position ?? state.playerToGuess.position,
                 teams: props.playerToGuess.teams.length > 0 ? props.playerToGuess.teams : state.playerToGuess.teams
-            }
+            },
+            step: props.step,
+            id: props.id
         }
     }),
-    on(GameActions.newGame, (state: GameState) => {
+    on(GameActions.newGameSuccess, (state: GameState,  props) => {
         
         return {
             ...state,
@@ -66,7 +68,7 @@ export const gameReducer = createReducer(initialGameState,
                 name: ''
             },
             step: 0,
-            id: ''
+            id: props.id
             }
         }
     )

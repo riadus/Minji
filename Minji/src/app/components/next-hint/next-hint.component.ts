@@ -44,7 +44,9 @@ export class NextHintComponent implements OnInit, OnDestroy {
     if(this.gameEnded) {
       this.store.dispatch(GameActions.newGame());
     }
+    else{
     this.store.dispatch(GameActions.nextHint());
+    }
   }
 
   ngOnDestroy(): void {

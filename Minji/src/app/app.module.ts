@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { GameComponent } from './components/game/game.component';
@@ -65,7 +66,8 @@ registerLocaleData(localeFr);
     StoreModule.forFeature('user-interface', userInterfaceReducer),  
     EffectsModule.forRoot([GameEffects]),
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
     ],
   providers: [{ provide: LOCALE_ID, useValue: 'en-GB'}],
   bootstrap: [AppComponent]
